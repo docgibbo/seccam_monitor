@@ -1,0 +1,25 @@
+#SECURITY CAM MONITOR
+
+##DESCRIZIONE
+SecurityCamMonitor ha come obbiettivo monitorare lo stato degli apparati di un impianto di videosorveglianza,
+quali videocams, pontiradio, ... mediante ping che ne verifichino lo stato di acceso/spento.
+
+##RIFERIMENTI TECNOLOGICI
+Programma scritto in python (3.17), utilizza il modulo python-telegram-bot per inviare messaggi di notifica di errori
+al canale Telegram specificato dall'utente
+
+##PARAMETRI DI INPUT
+1) file json con la lista degli apparati da monitorare: vedere seccams_list.json come esempio
+2) Wait-time espresso in secondi tra due cicli di monitoraggio
+
+##CONFIGURAZIONE SU RASPBERRY
+1) git clone https://github.com/docgibbo/seccam_monitor.git
+2) sudo cp ./seccam_monitor/seccam.service /lib/systemd/system/
+3) sudo systemctl enable seccam_monitor.service
+4) sudo systemctl start seccam_monitor.service
+
+##PREREQUISITI
+1) aver installato python sul proprio device
+2) aver installato pip sul proprio device
+3) aver eseguito pip install python-telegram-bot
+4) aver eseguito pip install configparser

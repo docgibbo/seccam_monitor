@@ -22,9 +22,14 @@ import time
 import sys
 import traceback
 import datetime
+import configparser
 
-TOKEN = "5316502881:AAFTMEyDZaJkadeMqnharVoB5FvD6ZmjyEE"
-CHAT_ID = "-1001789492708"
+config = configparser.ConfigParser()
+config.read('telegram.properties')
+
+TOKEN = config.get('Telegram', 'token')
+CHAT_ID = config.get('Telegram', 'chat_id')
+print(TOKEN)
 updater = Updater(token=TOKEN)
 time_sleep = 900
 
