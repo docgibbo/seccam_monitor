@@ -1,0 +1,14 @@
+[Unit]
+Description=Monitoring of Security Videocams
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/seccammonitor/main.py /home/pi/seccammonitor/iplist.json 900
+WorkingDirectory=/home/pi/seccammonitor/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target

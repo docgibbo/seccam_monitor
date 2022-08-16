@@ -1,0 +1,14 @@
+{
+  "videocams": [
+    {
+      "name" : "ip1",
+      "ip": "192.168.1.12",
+      "type": "camera"
+    },
+    {
+      "name" : "ip2",
+      "ip": "192.168.1.50",
+      "type": "ponte"
+    }
+  ]
+}
